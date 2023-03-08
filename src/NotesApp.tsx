@@ -1,5 +1,10 @@
 import { AppRouter } from "./router";
+import { NotesProvider } from "./features";
 
 export const NotesApp: React.FC = (): JSX.Element => {
-  return <AppRouter />;
+  return (
+    <NotesProvider>
+      <AppRouter />
+    </NotesProvider>
+  );
 };
