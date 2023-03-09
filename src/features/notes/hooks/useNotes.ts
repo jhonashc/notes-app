@@ -5,14 +5,22 @@ import { Note, NotesState } from "../interfaces";
 const INITIAL_STATE: NotesState = {
   notes: [
     {
-      id: "1",
-      title: "This is the first note",
-      content: "Thisi is the first content",
+      id: "12ee587c-1bb9-4f05-af94-9ba2efb08132",
+      title: "Noteworthy technology acquisitions 2021",
+      content:
+        "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
     },
     {
-      id: "2",
-      title: "This is the second note",
-      content: "Thisi is the second content",
+      id: "x2ee587c-1bb9-4f05-af94-9ba2efb08132",
+      title: "Noteworthy technology acquisitions 2021",
+      content:
+        "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    },
+    {
+      id: "vdee587c-1bb9-4f05-af94-9ba2efb08132",
+      title: "Noteworthy technology acquisitions 2021",
+      content:
+        "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
     },
   ],
 };
