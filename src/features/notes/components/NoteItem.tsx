@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BsFillPencilFill, BsFillTrashFill } from "react-icons/bs";
 import { Note } from "../interfaces";
 import { NotesContext } from "../context";
+import { NoteTagList } from "./NoteTagList";
 
 type NoteItemProps = {
   note: Note;
@@ -12,7 +13,7 @@ export const NoteItem: React.FC<NoteItemProps> = ({ note }): JSX.Element => {
   const { handleDeleteNote } = useContext(NotesContext);
 
   return (
-    <div className="md:max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-100 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <Link to={`/notes/${note.id}`}>
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {note.title}
@@ -21,6 +22,7 @@ export const NoteItem: React.FC<NoteItemProps> = ({ note }): JSX.Element => {
       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {note.content}
       </p>
+      <NoteTagList tags={note?.tags || []} />
       <div className="flex mt-4 space-x-3">
         <Link
           to={`/notes/${note.id}`}

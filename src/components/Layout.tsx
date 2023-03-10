@@ -3,7 +3,7 @@ import { Navbar } from "./Navbar";
 
 export const AuthLayout = () => {
   return (
-    <div className="grid w-screen h-screen px-4 md:px-0">
+    <div className="grid w-screen h-screen px-4 md:px-0 bg-slate-200">
       <Outlet />
     </div>
   );

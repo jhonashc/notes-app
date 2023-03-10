@@ -9,18 +9,44 @@ const INITIAL_STATE: NotesState = {
       title: "Noteworthy technology acquisitions 2021",
       content:
         "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+      tags: [
+        {
+          id: "c62ee587c-1bb9-4f05-af94-9ba2efb08132",
+          name: "Frontend",
+        },
+        {
+          id: "4g2ee587c-1bb9-4f05-af94-9ba2efb08132",
+          name: "React",
+        },
+      ],
     },
     {
       id: "x2ee587c-1bb9-4f05-af94-9ba2efb08132",
       title: "Noteworthy technology acquisitions 2021",
       content:
         "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+      tags: [
+        {
+          id: "yg2ee587c-1bb9-4f05-af94-9ba2efb08132",
+          name: "Freelancer",
+        },
+      ],
     },
     {
       id: "vdee587c-1bb9-4f05-af94-9ba2efb08132",
       title: "Noteworthy technology acquisitions 2021",
       content:
         "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+      tags: [
+        {
+          id: "e2ee587c-1bb9-4f05-af94-9ba2efb08132",
+          name: "Develop",
+        },
+        {
+          id: "bg2ee587c-1bb9-4f05-af94-9ba2efb08132",
+          name: "Freelancer",
+        },
+      ],
     },
   ],
 };
