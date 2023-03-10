@@ -1,39 +1,33 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaReact } from "react-icons/fa";
 
 export const Navbar: React.FC = (): JSX.Element => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <nav className="py-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav className="p-4 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" className="flex items-center">
-          <img
-            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-            className="h-6 mr-1 sm:h-10"
-            alt="Brand"
-          />
+          <FaReact className="text-2xl mr-1" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             Notes
           </span>
         </Link>
-
         <div className="flex items-center md:order-2 relative">
           <button
             type="button"
-            onClick={() => setOpen(!open)}
-            className="flex mr-3 text-sm  rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            onClick={() => setOpen((prev) => !prev)}
+            className="flex text-sm rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
           >
-            <span className="sr-only">Open user menu</span>
             <img
               className="w-8 h-8 rounded-full object-cover"
               src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
               alt="user photo"
             />
           </button>
-          {/* Dropdown menu */}
           {open && (
-            <div className="z-50 absolute top-10 right-3 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+            <div className="z-50 absolute top-10 right-0 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
               <div className="px-4 py-3">
                 <span className="block text-sm text-gray-900 dark:text-white">
                   Bonnie Green
