@@ -22,7 +22,7 @@ export const Navbar: React.FC = (): JSX.Element => {
           >
             <img
               className="w-8 h-8 rounded-full object-cover"
-              src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
+              src="https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
               alt="user photo"
             />
           </button>
@@ -63,7 +63,7 @@ export const Navbar: React.FC = (): JSX.Element => {
                 </li>
                 <li onClick={() => setOpen(false)}>
                   <Link
-                    to="#"
+                    to="/auth/login"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
                     Sign out
@@ -73,12 +73,6 @@ export const Navbar: React.FC = (): JSX.Element => {
             </div>
           )}
         </div>
-        {/* <Link
-          to="/new"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Create
-        </Link> */}
       </div>
     </nav>
   );
