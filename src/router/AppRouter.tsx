@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthLayout, Layout } from "../components";
-import { AuthRouter, NotesRouter } from "../features";
+import { AuthRouter, NotesRouter } from "../modules";
 
 export const AppRouter: React.FC = (): JSX.Element => {
   return (
