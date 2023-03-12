@@ -1,13 +1,7 @@
 import { useField } from "formik";
+import { BaseFieldProps } from "../interfaces";
 
-type CheckboxFieldProps = {
-  label: string;
-  type: string;
-  name: string;
-  placeholder?: string;
-};
-
-export const CheckboxField: React.FC<CheckboxFieldProps> = ({
+export const CheckboxField: React.FC<BaseFieldProps> = ({
   label,
   ...props
 }): JSX.Element => {

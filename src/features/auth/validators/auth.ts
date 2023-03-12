@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const loginSchema = Yup.object({
+export const loginSchema = Yup.object().shape({
   email: Yup.string()
     .email("Please enter a valid email.")
     .required("This field is required."),
@@ -9,7 +9,7 @@ export const loginSchema = Yup.object({
     .required("This field is required."),
 });
 
-export const registerSchema = Yup.object({
+export const registerSchema = Yup.object().shape({
   email: Yup.string()
     .email("Please enter a valid email.")
     .required("This field is required."),

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import {
@@ -5,15 +6,20 @@ import {
   PasswordTextField,
   TextField,
 } from "../../../components";
+import { LoginDto } from "../interfaces";
 import { loginSchema } from "../validators";
 
 export const Login: React.FC = (): JSX.Element => {
   const navigate = useNavigate();
+  const [initialLogin, setInitialLogin] = useState<LoginDto>({
+    email: "",
+    password: "",
+  });
 
   return (
     <div className="w-full max-w-sm place-self-center p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={initialLogin}
         validationSchema={loginSchema}
         onSubmit={(values, actions) => {
           navigate("/", {

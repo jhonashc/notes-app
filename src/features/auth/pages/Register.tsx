@@ -1,15 +1,22 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Formik } from "formik";
 import { PasswordTextField, TextField } from "../../../components";
+import { RegisterDto } from "../interfaces";
 import { registerSchema } from "../validators";
 
 export const Register: React.FC = (): JSX.Element => {
   const navigate = useNavigate();
+  const [initialRegister, setInitialRegister] = useState<RegisterDto>({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   return (
     <div className="w-full max-w-sm place-self-center p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
       <Formik
-        initialValues={{ email: "", password: "", confirmPassword: "" }}
+        initialValues={initialRegister}
         validationSchema={registerSchema}
         onSubmit={(values, actions) => {
           navigate("/", {

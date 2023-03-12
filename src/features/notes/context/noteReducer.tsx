@@ -15,7 +15,6 @@ export const notesReducer = (
         ...state,
         notes: [...state.notes, action.payload],
       };
-
     case "UPDATE_NOTE":
       return {
         ...state,
@@ -30,7 +29,6 @@ export const notesReducer = (
             : note
         ),
       };
-
     case "DELETE_NOTE":
       return {
         ...state,

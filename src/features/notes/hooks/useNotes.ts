@@ -48,6 +48,18 @@ const INITIAL_STATE: NotesState = {
         },
       ],
     },
+    {
+      id: "p12e587c-1bb9-4f05-af94-9ba2efb08132",
+      title: "Noteworthy technology acquisitions 2021",
+      content:
+        "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+      tags: [
+        {
+          id: "h2ee587c-1bb9-4f05-af94-9ba2efb08132",
+          name: "Angular",
+        },
+      ],
+    },
   ],
 };
 
@@ -56,6 +68,14 @@ export const useNotes = (): NotesContextProps => {
 
   const getNoteById = (id: string): Note | undefined => {
     return notesState?.notes.find((note) => note.id === id);
+  };
+
+  const getNotesByQuery = (query: string): Note[] => {
+    return notesState.notes?.filter(
+      (note) =>
+        note.title.toLowerCase().includes(query) ||
+        note.tags?.some((tag) => tag.name.toLowerCase().includes(query))
+    );
   };
 
   const handleCreateNote = (note: Note): void => {
@@ -74,6 +94,7 @@ export const useNotes = (): NotesContextProps => {
     notesState,
     notesCount: notesState.notes.length || 0,
     getNoteById,
+    getNotesByQuery,
     handleCreateNote,
     handleUpdateNote,
     handleDeleteNote,
