@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillPencilFill, BsFillTrashFill } from "react-icons/bs";
-import { Note } from "../interfaces";
+import { ConfirmModal } from "../../../components";
 import { NotesContext } from "../context";
+import { Note } from "../interfaces";
 import { NoteTagList } from "./NoteTagList";
 
 type NoteItemProps = {
@@ -11,6 +12,14 @@ type NoteItemProps = {
 
 export const NoteItem: React.FC<NoteItemProps> = ({ note }): JSX.Element => {
   const { handleDeleteNote } = useContext(NotesContext);
+  const [visible, setVisible] = useState<boolean>(false);
+
+  const handleDeleteItem = (isDeleted: boolean) => {
+    if (isDeleted) {
+      setVisible(false);
+      handleDeleteNote(note.id);
+    }
+  };
 
   return (
     <div className="w-100 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -32,11 +41,16 @@ export const NoteItem: React.FC<NoteItemProps> = ({ note }): JSX.Element => {
         </Link>
         <button
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-          onClick={() => handleDeleteNote(note.id)}
+          onClick={() => setVisible(true)}
         >
           Delete <BsFillTrashFill className="ml-1" />
         </button>
       </div>
+      <ConfirmModal
+        visible={visible}
+        handleVisible={setVisible}
+        handleDeleteItem={handleDeleteItem}
+      />
     </div>
   );
 };

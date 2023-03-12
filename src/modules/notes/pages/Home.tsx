@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { NoteList } from "../components";
@@ -6,6 +6,7 @@ import { NotesContext } from "../context";
 
 export const Home: React.FC = (): JSX.Element => {
   const { notesState } = useContext(NotesContext);
+  const [visible, setVisible] = useState<boolean>(true);
 
   return (
     <>
